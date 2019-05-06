@@ -1,0 +1,14 @@
+# Don't track content of these folders
+.vs/
+.git/
+node_modules/
+obj/
+Debug/
+Release/
+
+# Compiled source #
+###################
+*.com
+*.dll
+*.pdb
+*.exe
