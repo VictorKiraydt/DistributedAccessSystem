@@ -37,13 +37,13 @@ namespace DASApi.Core
 					};
 				});
 
-			//services.AddCors(options =>
-			//{
-			//	options.AddPolicy("EnableCORS", builder =>
-			//	{
-			//		builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials().Build();
-			//	});
-			//});
+			services.AddCors(options =>
+			{
+				options.AddPolicy("EnableCORS", builder =>
+				{
+					builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials().Build();
+				});
+			});
 
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 		}
@@ -61,7 +61,7 @@ namespace DASApi.Core
 			}
 
 			app.UseAuthentication();
-			//app.UseCors("EnableCORS");
+			app.UseCors("EnableCORS");
 
 			app.UseHttpsRedirection();
 			app.UseMvc();
