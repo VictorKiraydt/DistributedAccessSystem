@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using DASApi.Core.Repositories;
+using DASApi.Core.Repositories.Interfaces;
 
 namespace DASApi.Core
 {
@@ -21,6 +23,10 @@ namespace DASApi.Core
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+			services.AddTransient<IUserRepository, UserRepository>();
+			services.AddTransient<IProjectRepository, ProjectRepository>();
+			services.AddTransient<IBatchQueueEntryRepository, BatchQueueEntryRepository>();
+
 			services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 				.AddJwtBearer(options =>
 				{

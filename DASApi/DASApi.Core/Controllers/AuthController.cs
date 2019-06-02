@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using DASApi.Core.Repositories.Interfaces;
 
 namespace DASApi.Core.Controllers
 {
@@ -16,10 +17,12 @@ namespace DASApi.Core.Controllers
 	public class AuthController : ControllerBase
 	{
 		public IConfiguration Configuration { get; }
+		private readonly IUserRepository _userRepo;
 
-		public AuthController(IConfiguration configuration)
+		public AuthController(IConfiguration configuration, IUserRepository userRepo)
 		{
 			Configuration = configuration;
+			_userRepo = userRepo;
 		}
 
 		// GET api/values
@@ -52,6 +55,26 @@ namespace DASApi.Core.Controllers
 			{
 				user = new UserModel { UserName = "test", Password = "test" };
 			}
+
+			//user = _userRepo.GetByUserName(loginInfo.UserName.ToLower()).Result;
+
+			//if (user != null)
+			//{
+			//	if (loginInfo.Password.Equals(user.Password))
+			//	{
+			//		return user;
+			//	}
+			//}
+
+			//user = _userRepo.GetByEmail(loginInfo.Email.ToLower()).Result;
+
+			//if (user != null)
+			//{
+			//	if (loginInfo.Password.Equals(user.Password))
+			//	{
+			//		return user;
+			//	}
+			//}
 
 			return user;
 		}
