@@ -6,9 +6,15 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   template: `
-    <app-header *ngIf="isUserAuthenticated()"></app-header>
-    <router-outlet></router-outlet>
-    <app-footer *ngIf="isUserAuthenticated()"></app-footer>`,
+    <router-outlet *ngIf="!isUserAuthenticated()"></router-outlet>
+    
+    <div class="wrapper" *ngIf="isUserAuthenticated()">
+      <app-header></app-header>
+      <app-nav></app-nav>
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>`,
   styles: []
 })
 export class AppComponent {

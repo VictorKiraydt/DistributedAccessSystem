@@ -1,0 +1,33 @@
+header {
+  margin: 0 !important;
+  padding: 0 20px 0 0 !important;
+  background: #092756 !important;
+  color: #fff;
+  /* box-shadow: 20px #000 !important; */
+}
+  header a {
+    color: #fff !important;
+  }
+
+.btn-toggler {
+  height: 60px;
+  width: 60px;
+  margin-right: 15px;
+  border-radius: 0;
+}
+
+.btn-toggler:hover {
+  background-color: #062049;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+}
+
+.btn-toggler:focus,
+.btn-toggler:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.black-toggler {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}

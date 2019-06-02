@@ -1,0 +1,15 @@
+<h2>Process Monitoring</h2>
+
+<br /><br />
+<div class="flex">
+  <div class="flex-item">
+    <table class="table table-hover">
+      <tr>
+        <th scope="col" *ngFor="let label of tableLabels">{{label}}</th>
+      </tr>
+      <tr *ngFor="let d of tableData;">
+        <td scope="row" *ngFor="let label of tableLabels; let j=index">{{d && d.data[j]}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
