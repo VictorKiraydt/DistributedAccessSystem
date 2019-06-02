@@ -1,4 +1,16 @@
-<header>
-  header works!
-  <app-nav></app-nav>
+<header class="d-flex fixed-top flex-md-row align-items-center p-2 border-bottom shadow-sm">
+
+  <button class="btn btn-toggler" type="button" id="sidebarCollapse" (click)="toggleSidebar()">
+    <span class="navbar-toggler-icon black-toggler"></span>
+  </button>
+
+  <a class="my-0 mr-md-auto font-weight-normal navbar-brand" href="/">
+    <h4>Distributed Access System</h4>
+  </a>
+
+  <div class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-dark" href="#">Username</a>
+  </div>
+  <a class="btn btn-outline-primary" (click)="logOut()">Logout</a>
+
 </header>

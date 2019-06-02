@@ -1,3 +1,26 @@
-<p>
-  nav works!
-</p>
+<nav id="sidebar">
+  <ul class="list-unstyled components">
+    <p>DAS Version: 1.0.1</p>
+
+    <li>
+      <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Utilities</a>
+      <ul class="collapse list-unstyled" id="pageSubmenu">
+        <li><a routerLink="utilities/projects-pool" routerLinkActive="active">Change Projects pool</a></li>
+        <li><a routerLink="utilities/users-pool" routerLinkActive="active">Change Users pool</a></li>
+        <li><a routerLink="utilities/projects-attr" routerLinkActive="active">Set Projects attribute</a></li>
+        <li><a routerLink="utilities/search-service-r" routerLinkActive="active">Restrat Search service</a></li>
+        <li><a routerLink="utilities/alerts-cancellation" routerLinkActive="active">Alerts cancellation</a></li>
+        <li><a routerLink="utilities/project-config" routerLinkActive="active">Project configuration</a></li>
+        <li><a routerLink="utilities/project-grp-del" routerLinkActive="active">Project Group deletion</a></li>
+        <li><a routerLink="utilities/project-info" routerLinkActive="active">Get Project information</a></li>
+      </ul>
+    </li>
+    <li><a routerLink="project-users-mn" routerLinkActive="active">Project Users Manager</a></li>
+    <li><a routerLink="duo-users-mn" routerLinkActive="active">DUO Users Manager</a></li>
+    <li><a routerLink="services-backlog" routerLinkActive="active">Services Backlog</a></li>
+    <li><a routerLink="process-monitoring" routerLinkActive="active">Process Monitoring</a></li>
+    <li><a routerLink="report-generation" routerLinkActive="active">Report Generation</a></li>
+    <li><a routerLink="exp-viewer" routerLinkActive="active">Exceptions Viewer</a></li>
+
+  </ul>
+</nav>

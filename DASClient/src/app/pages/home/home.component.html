@@ -1,16 +1,25 @@
-<h1>Home Page</h1>
+<h2>Home Page</h2>
 
-<div *ngIf="isUserAuthenticated()" style="color:blue;">
-  <h2>
+<div *ngIf="isUserAuthenticated()" style="color:#007bff;">
+  <h3>
     YOU ARE LOGGED IN
-  </h2>
+  </h3>
 </div>
 
+<br />
+<p>The most used menu options:</p>
 <ul>
-  <li><a routerLink="/customers">Customer</a></li>
   <li><a routerLink="/customers">Services Backlog</a></li>
-  <li><a routerLink="/customers">DUO User Manager</a></li>
-  <li><a routerLink="/customers">Reports</a></li>
-  <li *ngIf="!isUserAuthenticated()"><a routerLink="/login">Login</a></li>
+  <li><a routerLink="/customers">DUO Users Manager</a></li>
+  <li><a routerLink="/customers">Project Users Manager</a></li>
+  <li><a routerLink="/customers">Report Generation</a></li>
   <li *ngIf="isUserAuthenticated()"><a class="logout" (click)="logOut()">Logout</a></li>
 </ul>
+
+<br /><br />
+<p>The HttpClient in @angular/common/http offers a simplified client HTTP API for Angular applications that rests on the XMLHttpRequest interface exposed by browsers. Additional benefits of HttpClient include testability features, typed request and response objects, request and response interception, Observable apis, and streamlined error handling.</p>
+<p>That it is tempting to write the Http.get() inside the component itself and skip the service.</p>
+<p>However, data access rarely stays this simple. You typically post-process the data, add error handling, and maybe some retry logic to cope with intermittent connectivity.</p>
+<p>The component quickly becomes cluttered with data access minutia. The component becomes harder to understand, harder to test, and the data access logic can't be re-used or standardized.</p>
+<p>That's why it is a best practice to separate presentation of data from data access by encapsulating data access in a separate service and delegating to that service in the component, even in simple cases like this one.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
