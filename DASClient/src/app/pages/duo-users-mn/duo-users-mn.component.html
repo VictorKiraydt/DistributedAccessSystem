@@ -1,0 +1,83 @@
+<h2>DUO Users Manager</h2>
+
+<div class="form-inline find-user">
+  <label for="inptSearchEmail">User Email</label>
+  <input type="email" #inptSearchEmail (keyup)="onKeyUp($event)" name="inptSearchEmail" class="form-control" placeholder="Enter email" />
+  <button type="button" #btnFindUser class="btn btn-info btn-md" data-toggle="modal" disabled>Find user</button>
+</div>
+<div class="row">
+  <p #tfaResetInfo style="color:#007bff;padding-left: 15px;"></p>
+</div>
+
+<div class="row" style="padding-left: 15px;">
+  <p>The Admin API lets developers integrate with Duo Security’s platform at a low level. The API has methods for creating, retrieving, updating, and deleting the core objects in Duo’s system: users, phones, hardware tokens, admins, and integrations.</p>
+  <p>In addition, developers can write applications that programmatically read their Duo account’s authentication logs, administrator logs, and telephony logs; read or update account settings; and retrieve reports and other information.</p>
+  <p>All requests must have “Authorization” and “Date” headers.</p>
+  <p>If the request method is GET or DELETE, URL-encode parameters and send them in the URL query string like this: /admin/v1/users?realname=First%20Last&username=root. They still go on a separate line when creating the string to sign for an Authorization header.</p>
+  <p>Send parameters for POST requests in the body as URL-encoded key-value pairs (the same request format used by browsers to submit form data). The header “Content-Type: application/x-www-form-urlencoded” must also be present.</p>
+</div>
+
+<div id="popupFoundUser" #popupFoundUser class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">User Info</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+          <div class="form-group form-inline">
+            <label for="inptFirstName">First Name:</label>
+            <input type="text" #inptFirstName class="form-control" name="inptFirstName" disabled />
+          </div>
+          <div class="form-group form-inline">
+            <label for="inptLastName">Last Name:</label>
+            <input type="text" #inptLastName class="form-control" name="inptLastName" disabled />
+          </div>
+          <div class="form-group form-inline">
+            <label for="inptUserName">User Name:</label>
+            <input type="text" #inptUserName class="form-control" name="inptUserName" disabled />
+          </div>
+          <div class="form-group form-inline">
+            <label for="inptOutputEmail">Email:</label>
+            <input type="email" #inptOutputEmail class="form-control" name="inptOutputEmail" disabled />
+          </div>
+          <div class="form-group form-inline">
+            <label for="inptUserPhone">Phone(s):</label>
+            <input type="tel" #inptUserPhone class="form-control" name="inptUserPhone" disabled />
+          </div>
+          <div class="form-group form-inline">
+            <label for="inptIsEnrolled">Is Enrolled:</label>
+            <input type="checkbox" #inptIsEnrolled class="form-control" name="inptIsEnrolled" disabled />
+          </div>
+          <div class="form-group form-inline">
+            <label for="inptStatus">Status:</label>
+            <input type="text" #inptStatus class="form-control" name="inptStatus" disabled />
+          </div>
+          <div class="form-group form-inline">
+            <label for="inptLastLogin">Last Login (UTC):</label>
+            <input type="datetime" #inptLastLogin class="form-control" name="inptLastLogin" disabled />
+          </div>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info btn-md" #btnResetPhones (click)="resetPhones()" style="display: none;">Reset Phone(s)</button>
+        <button type="button" class="btn btn-default" #btnClosePopupFoundUser data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" #popupMessage id="popupMessage" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">User Not Found</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body" #messageBody>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger btn-md" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+div.find-user > * {
+  margin-top: 60px;
+  margin-right: 30px;
+}
+div.find-user > input {
+  width: 300px;
+}
+
+#popupFoundUser .modal-body label {
+	width: 150px;
+	justify-content: flex-start;
+	padding-left: 20px;
+}
+#popupFoundUser .modal-body input {
+	width: 275px;
+}
+	#popupFoundUser .modal-body input[type="checkbox"] {
+		width: 30px;
+	}

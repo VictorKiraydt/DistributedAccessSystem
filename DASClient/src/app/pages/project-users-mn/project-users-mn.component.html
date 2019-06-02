@@ -1,0 +1,7 @@
+<h2>Project Users Manager</h2>
+
+<div class="form-inline find-user">
+  <label for="inptSearchEmail">User Email</label>
+  <input type="email" #inptSearchEmail (keyup)="onKeyUp($event)" name="inptSearchEmail" class="form-control" placeholder="Enter email" />
+  <button type="button" #btnFindUser class="btn btn-info btn-md" data-toggle="modal" (click)="enterValues()" disabled>Find user</button>
+</div>
