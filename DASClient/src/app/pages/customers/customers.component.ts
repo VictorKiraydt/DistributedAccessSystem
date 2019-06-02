@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+
 
 @Component({
   selector: 'app-customers',
@@ -7,6 +9,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ['./customers.component.css']
 })
 export class CustomersComponent implements OnInit {
+  
   customers: any;
 
   constructor(private http: HttpClient) { }
