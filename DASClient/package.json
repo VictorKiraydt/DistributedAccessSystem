@@ -29,7 +29,7 @@
     "chartjs-plugin-annotation": "^0.5.7",
     "core-js": "^2.5.4",
     "css": "^2.2.4",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ng2-bootstrap-modal": "^1.0.1",
     "ng2-charts": "^2.2.3",
     "rxjs": "~6.3.3",
